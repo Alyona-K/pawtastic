@@ -1,11 +1,758 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="preload" href="fonts/Manrope-Regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/Manrope-Medium.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/NeueMetanaNextFreePersonal-Sm.woff2" as="font" crossorigin="anonymous">
+    <title>Tienda online de ropa para mascotas - Pawtastic</title>
 </head>
+
 <body>
-    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <a class="header__logo" href="#" aria-label="Enlace a la página principal">
+                    <svg class="header__icon-logo" width="193" height="41" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-pawtastic"></use>
+                        <path class="header__logo-icon-cat"
+                            d="M51.7862 13.6144C51.5234 14.25 50.5454 13.8241 50.8201 13.1996C52.8888 8.33513 52.8457 3.50546 52.7175 1.55034C52.7065 1.37817 52.5399 1.26096 52.3741 1.30491C48.1388 2.43495 44.7276 4.62268 42.0014 7.95143C41.2294 8.94319 42.2908 10.065 42.2908 10.065C42.2441 10.0503 40.4345 9.48898 40.3924 9.47524L40.3952 9.47066C40.1012 9.35894 39.8851 9.01004 40.1241 8.68037C43.2944 4.17854 47.6397 1.27653 53.038 0.0549137C53.3274 -0.0165147 53.6369 0.198687 53.6726 0.49539C53.7111 0.760958 54.5673 7.0714 51.7862 13.6144ZM51.1305 3.19869C48.3558 4.44319 46.8466 5.67579 45.7193 6.86535L48.0518 7.13184L44.832 8.33055L47.4153 8.78202L44.6891 9.79667L46.5573 10.1923L45.0041 10.8461C45.0838 10.8937 49.299 12.5824 49.299 12.5824C50.5664 9.80125 51.3613 5.50272 51.4492 3.41114C51.4565 3.24356 51.2825 3.13001 51.1296 3.19777L51.1305 3.19869ZM21.0325 0.0549137C20.7432 -0.0165147 20.4327 0.198687 20.397 0.49539C20.3595 0.760958 19.5041 7.0714 22.2853 13.6144C22.5481 14.25 23.5261 13.8241 23.2505 13.1996C21.1827 8.33605 21.2258 3.50546 21.353 1.55034C21.364 1.37817 21.5316 1.26096 21.6974 1.30491C25.9318 2.43495 29.343 4.62268 32.0692 7.95143C32.8421 8.94319 31.7807 10.065 31.7807 10.065C31.8274 10.0503 33.636 9.48898 33.6791 9.47524L33.6754 9.47066C33.9693 9.35894 34.1855 9.01004 33.9465 8.68037C30.7761 4.17854 26.4309 1.27653 21.0325 0.0549137ZM26.6562 8.78202L29.2386 8.33147L26.0188 7.13275L28.3521 6.86535C27.2239 5.67579 25.7148 4.44411 22.94 3.19869C22.788 3.13092 22.614 3.24539 22.6204 3.41206C22.7093 5.50363 23.5041 9.80125 24.7706 12.5833C24.7706 12.5833 28.9867 10.8947 29.0655 10.847L27.5133 10.1932L29.3805 9.79759L26.6552 8.78294L26.6562 8.78202Z"
+                            fill="currentColor" />
+                        <path class="header__logo-icon-dog"
+                            d="M33.7954 8.8252C33.8241 9.00961 33.7235 9.1789 33.5647 9.25644L33.5573 9.26706L32.1173 10.0726C32.1173 10.0726 33.0373 9.25579 32.7542 7.73022C32.0322 4.22407 30.6842 1.901 29.0436 1.40477C27.518 1.76538 24.8312 5.39967 24.8312 9.92392C24.8312 11.2552 24.9662 12.5083 25.2343 13.6488C25.365 14.1707 24.5437 14.3688 24.4256 13.8388C24.1431 12.6364 24 11.3195 24 9.92392C24.0006 6.1559 26.3518 0.994154 28.9942 0.566668C31.4098 1.00791 33.0373 4.1097 33.7954 8.8252ZM29.0517 2.92036C27.5493 2.71473 25.3918 7.75961 25.8762 11.2882C25.9187 11.8951 26.6286 12.2008 27.1068 11.8257C27.8837 11.2171 28.7311 10.6945 29.6361 10.2745C31.1574 9.5677 31.8848 7.81398 31.3248 6.23027C30.6223 4.2447 29.6986 2.92036 29.0517 2.92036ZM43.0063 0.566668C40.5902 1.00791 38.9627 4.1097 38.2046 8.8252C38.1765 9.00961 38.2765 9.1789 38.4359 9.25644L38.4434 9.26706L39.8833 10.0726C39.8833 10.0726 38.9627 9.25579 39.2465 7.73022C39.9678 4.22407 41.3158 1.901 42.957 1.40477C44.482 1.76538 47.1694 5.39967 47.1694 9.92392C47.1694 11.2552 47.0338 12.5083 46.7663 13.6488C46.6357 14.1707 47.4563 14.3688 47.575 13.8388C47.8569 12.6364 48 11.3195 48 9.92392C48 6.15527 45.6488 0.994154 43.0063 0.566668ZM42.9483 2.92036C42.302 2.92036 41.3783 4.2447 40.6758 6.23027C40.1152 7.81398 40.8433 9.5677 42.3639 10.2745C43.2689 10.6945 44.117 11.2171 44.8932 11.8257C45.3714 12.2008 46.0819 11.8951 46.1244 11.2882C46.6088 7.75961 44.4507 2.71473 42.9483 2.92036Z"
+                            fill="currentColor" />
+                    </svg>
+                </a>
+                <nav class="main-nav">
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item">
+                            <a class="main-nav__link" href="#">Cat&aacute;logo</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__link" href="#">Gu&iacute;as</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__link" href="#">Suscripci&oacute;n</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__link" href="#">Seguro</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__link" href="#">Sobre nosotros</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="header__user-list">
+                    <li class="header__user-item">
+                        <a class="header__user-link" href="#" aria-label="Buscar en&nbsp;el&nbsp;sitio">
+                            <svg width="36" height="36" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#icon-search"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__user-item">
+                        <a class="header__user-link" href="#" aria-label="Cuenta personal">
+                            <svg width="36" height="36" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#icon-user"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__user-item">
+                        <a class="header__user-link" href="#" aria-label="Carrito">
+                            <svg width="36" height="36" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#icon-basket"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__user-item header__user-item--burger">
+                        <button class="header__user-link burger" aria-label="Abrir men&uacute; hamburguesa">
+                            <svg width="36" height="36" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#icon-burger"></use>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <!-- Hero section -->
+        <section class="hero">
+            <h1 class="visually-hidden">Tienda online de&nbsp;ropa para mascotas</h1>
+
+            <div class="container">
+                <svg class="hero__decor hero__decor--desktop" width="2154" height="1036" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#icon-decor-desktop"></use>
+                </svg>
+                <svg class="hero__decor hero__decor--tablet" width="2517" height="1233" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#icon-decor-tablet"></use>
+                </svg>
+                <svg class="hero__decor hero__decor--mobile" width="1771" height="812" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#icon-decor-mobile"></use>
+                </svg>
+                <div class="hero__wrapper">
+                    <div class="hero__info">
+                        <h2 class="hero__title">
+                            <span class="hero__title-box">
+                                <span class="hero__title-line hero__title-line--first">todo lo&nbsp;necesario</span>
+                            </span>
+                            <span class="hero__title-box">
+                                <span class="hero__title-line hero__title-line--second">para&nbsp;tu</span>
+                            </span>
+                            <span class="hero__title-box">
+                                <span class="hero__title-line hero__title-line--third">nuevo amigo</span>
+                            </span>
+                        </h2>
+                        <p class="hero__text">
+                            <span class="hero__text-line">Nuestra tienda online ofrece todo lo&nbsp;que necesitas para
+                                el&nbsp;confort, la&nbsp;salud y&nbsp;la&nbsp;felicidad de&nbsp;tu&nbsp;mascota.</span>
+                        </p>
+                        <a class="hero__link btn" href="#">Ir&nbsp;al&nbsp;cat&aacute;logo</a>
+                    </div>
+                    <div class="hero__gallery">
+                        <img class="hero__img hero__img--9" src="images/hero-pet-9.jpg"
+                            srcset="images/hero-pet-9@2x.jpg 2x" height="140" width="140"
+                            alt="Un&nbsp;perro peque&ntilde;o con la&nbsp;lengua afuera se&nbsp;sienta en&nbsp;el&nbsp;asiento del conductor de&nbsp;un&nbsp;coche, mirando hacia adelante">
+                        <img class="hero__img hero__img--8" src="images/hero-pet-8.jpg"
+                            srcset="images/hero-pet-8@2x.jpg 2x" height="140" width="140"
+                            alt="Un&nbsp;perro marr&oacute;n est&aacute; acostado sobre una manta texturizada junto a&nbsp;un&nbsp;suricata, ambos mirando hacia la&nbsp;c&aacute;mara">
+                        <img class="hero__img hero__img--7" src="images/hero-pet-7.jpg"
+                            srcset="images/hero-pet-7@2x.jpg 2x" height="140" width="140"
+                            alt="Un&nbsp;gatito marr&oacute;n con orejas grandes se&nbsp;sienta sobre una manta colorida en&nbsp;una habitaci&oacute;n iluminada por el&nbsp;sol. El&nbsp;gatito mira hacia adelante, transmitiendo curiosidad y&nbsp;juego">
+                        <img class="hero__img hero__img--6" src="images/hero-pet-6.jpg"
+                            srcset="images/hero-pet-6@2x.jpg 2x" height="160" width="160"
+                            alt="Un&nbsp;pug est&aacute; de&nbsp;pie sobre un&nbsp;asiento de&nbsp;coche cubierto con una manta colorida, mirando directamente con una expresi&oacute;n curiosa. El&nbsp;interior del coche es&nbsp;visible en&nbsp;el&nbsp;fondo">
+                        <img class="hero__img hero__img--5" src="images/hero-pet-5.jpg"
+                            srcset="images/hero-pet-5@2x.jpg 2x" height="200" width="200"
+                            alt="Un pomerania marrón y esponjoso se sienta dentro de un coche, luciendo alegre con la boca abierta. Está sobre una manta azul, creando una atmósfera acogedora y feliz">
+                        <img class="hero__img hero__img--4" src="images/hero-pet-4.jpg"
+                            srcset="images/hero-pet-4@2x.jpg 2x" height="180" width="180"
+                            alt="Un&nbsp;gato curioso naranja y&nbsp;blanco huele un&nbsp;ramo colorido con margaritas amarillas, rosas blancas y&nbsp;cintas rosas, transmitiendo una sensaci&oacute;n de&nbsp;curiosidad y&nbsp;calidez">
+                        <img class="hero__img hero__img--3" src="images/hero-pet-3.jpg"
+                            srcset="images/hero-pet-3@2x.jpg 2x" height="280" width="280"
+                            alt="Un&nbsp;perro negro y&nbsp;marr&oacute;n con una expresi&oacute;n curiosa est&aacute; acurrucado en&nbsp;una cama para perros de&nbsp;color beige acogedora. El&nbsp;entorno es&nbsp;un&nbsp;suelo de&nbsp;baldosas junto a&nbsp;una mesa peque&ntilde;a">
+                        <img class="hero__img hero__img--2" src="images/hero-pet-2.jpg"
+                            srcset="images/hero-pet-2@2x.jpg 2x" height="300" width="300"
+                            alt="Un&nbsp;peque&ntilde;o Chihuahua con un&nbsp;abrigo azul estampado y&nbsp;botas marrones se&nbsp;mantiene con confianza sobre unos escalones de&nbsp;madera, con una expresi&oacute;n curiosa y&nbsp;las orejas grandes erguidas">
+                        <img class="hero__img hero__img--1" src="images/hero-pet-1.jpg"
+                            srcset="images/hero-pet-1@2x.jpg 2x" height="320" width="320"
+                            alt="Un&nbsp;Corgi con orejas erguidas y&nbsp;una bandana colorida se&nbsp;sienta sobre el&nbsp;c&eacute;sped, luciendo contento con la&nbsp;lengua afuera. El&nbsp;fondo es&nbsp;un&nbsp;jard&iacute;n iluminado por el&nbsp;sol y&nbsp;desenfocado">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories section -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="visually-hidden">Categor&iacute;as de&nbsp;productos</h2>
+                <div class="categories__wrapper">
+                    <ul class="categories__list">
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                <span class="categories__inner">
+                                    <img class="categories__img" src="images/categories-1.png"
+                                        srcset="images/categories-1.png 2x" height="124" width="124"
+                                        alt="Una exhibici&oacute;n de&nbsp;libros coloridos con ilustraciones de&nbsp;gatos y&nbsp;t&iacute;tulos como &laquo;&iquest;Por qu&eacute; ma&uacute;llan los gatos?&raquo; y&nbsp;&laquo;Gatos planos&raquo;, creando un&nbsp;tono juguet&oacute;n y&nbsp;caprichoso"
+                                        loading="lazy">
+                                </span>
+                                <span class="categories__text">Novedades</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                <span class="categories__inner">
+                                    <img class="categories__img" src="images/categories-2.png"
+                                        srcset="images/categories-2.png 2x" height="124" width="124"
+                                        alt="Un&nbsp;Cavalier King Charles Spaniel con una sudadera rosa acostado, mirando curioso. Un&nbsp;peque&ntilde;o juguete blanco est&aacute; cerca sobre un&nbsp;fondo blanco liso"
+                                        loading="lazy">
+                                </span>
+                                <span class="categories__text">Ropa</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                <span class="categories__inner">
+                                    <img class="categories__img" src="images/categories-3.png"
+                                        srcset="images/categories-3.png 2x" height="124" width="124"
+                                        alt="Un&nbsp;bol naranja lleno de&nbsp;croquetas junto a&nbsp;un&nbsp;juguete de&nbsp;cuerda trenzada y&nbsp;colorida sobre un&nbsp;fondo rosa. La&nbsp;imagen transmite un&nbsp;ambiente juguet&oacute;n y&nbsp;amigable para las mascotas"
+                                        loading="lazy">
+                                </span>
+                                <span class="categories__text">Comida</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                <span class="categories__inner">
+                                    <img class="categories__img" src="images/categories-4.png"
+                                        srcset="images/categories-4.png 2x" height="124" width="124"
+                                        alt="Cepillo de&nbsp;madera para mascotas y&nbsp;juguetes para morder sobre una superficie de&nbsp;madera clara, junto a&nbsp;una correa trenzada. La&nbsp;escena transmite una atm&oacute;sfera c&aacute;lida y&nbsp;amigable para las mascotas"
+                                        loading="lazy">
+                                </span>
+                                <span class="categories__text">Cuidado</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                <span class="categories__inner">
+                                    <img class="categories__img" src="images/categories-5.png"
+                                        srcset="images/categories-5.png 2x" height="124" width="124"
+                                        alt="Perro blanco y&nbsp;esponjoso en&nbsp;un&nbsp;transport&iacute;n naranja con puerta met&aacute;lica, mirando hacia adelante con calma. El&nbsp;fondo es&nbsp;neutral, destacando el&nbsp;transport&iacute;n y&nbsp;el&nbsp;perro"
+                                        loading="lazy">
+                                </span>
+                                <span class="categories__text">Camas y&nbsp;transportadoras</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                <span class="categories__inner">
+                                    <img class="categories__img" src="images/categories-6.png"
+                                        srcset="images/categories-6.png 2x" height="124" width="124"
+                                        alt="Una correa rosa para mascotas con un&nbsp;broche de&nbsp;oro rosa brillante, un&nbsp;pomp&oacute;n texturizado, golosinas en&nbsp;forma de&nbsp;hueso y&nbsp;un&nbsp;collar suave est&aacute;n dispuestos ordenadamente sobre un&nbsp;fondo beige"
+                                        loading="lazy">
+                                </span>
+                                <span class="categories__text">Arneses y&nbsp;accesorios</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                <span class="categories__inner">
+                                    <img class="categories__img" src="images/categories-7.png"
+                                        srcset="images/categories-7.png 2x" height="124" width="124"
+                                        alt="Un&nbsp;juguete para perros azul en&nbsp;forma de&nbsp;hueso rodeado de&nbsp;tres pelotas texturizadas en&nbsp;gris, rojo y&nbsp;beige sobre una superficie blanca. El&nbsp;tono es&nbsp;juguet&oacute;n y&nbsp;acogedor"
+                                        loading="lazy">
+                                </span>
+                                <span class="categories__text">Juguetes</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular section -->
+        <section class="popular">
+            <div class="container">
+                <div class="popular__wrapper">
+                    <div class="popular__top">
+                        <h2 class="popular__title">populares</h2>
+                        <a href="#" class="popular__btn btn btn--secondary">Ver todo</a>
+                    </div>
+                    <ul class="popular__list">
+                        <li class="popular__item">
+                            <a href="#" class="popular__link">
+                                <span class="popular__inner">
+                                    <img class="popular__img" src="images/popular-1.jpg"
+                                        srcset="images/popular-1@2x.jpg" width="428" height="480"
+                                        alt="Un&nbsp;Schnauzer negro y&nbsp;gris con una bandana verde y&nbsp;una camisa crema se&nbsp;mantiene sobre un&nbsp;fondo blanco liso, mirando directamente a&nbsp;la&nbsp;c&aacute;mara con curiosidad"
+                                        loading="lazy">
+                                </span>
+                                <span class="popular__name">Jersey</span>
+                                <span class="popular__price">29,90&nbsp;&euro;</span>
+                            </a>
+                        </li>
+                        <li class="popular__item">
+                            <a href="#" class="popular__link">
+                                <span class="popular__inner">
+                                    <img class="popular__img" src="images/popular-2.jpg"
+                                        srcset="images/popular-2@2x.jpg" width="428" height="480"
+                                        alt="Un&nbsp;gatito gris y&nbsp;blanco esponjoso con un&nbsp;corbat&iacute;n adornado con joyas mira hacia arriba sobre un&nbsp;fondo liso, transmitiendo curiosidad y&nbsp;elegancia"
+                                        loading="lazy">
+                                </span>
+                                <span class="popular__name">Collar-pajarita</span>
+                                <span class="popular__price">15,60&nbsp;&euro;</span>
+                            </a>
+                        </li>
+                        <li class="popular__item">
+                            <a href="#" class="popular__link">
+                                <span class="popular__inner">
+                                    <img class="popular__img" src="images/popular-3.jpg"
+                                        srcset="images/popular-3@2x.jpg" width="428" height="480"
+                                        alt="Un&nbsp;peque&ntilde;o perro marr&oacute;n lleva una sudadera gris con capucha en&nbsp;forma de&nbsp;oso, de&nbsp;pie sobre un&nbsp;fondo blanco. El&nbsp;perro luce concentrado y&nbsp;ligeramente curioso, aportando un&nbsp;encanto juguet&oacute;n"
+                                        loading="lazy">
+                                </span>
+                                <span class="popular__name">Conjunto de&nbsp;lana</span>
+                                <span class="popular__price">13,20&nbsp;&euro;</span>
+                            </a>
+                        </li>
+                        <li class="popular__item">
+                            <a href="#" class="popular__link">
+                                <span class="popular__inner">
+                                    <img class="popular__img" src="images/popular-4.jpg"
+                                        srcset="images/popular-4@2x.jpg" width="428" height="480"
+                                        alt="Un&nbsp;Cavalier King Charles Spaniel con un&nbsp;disfraz blanco con estrellas, sentado sobre un&nbsp;fondo liso. La&nbsp;expresi&oacute;n del perro es&nbsp;dulce y&nbsp;curiosa"
+                                        loading="lazy">
+                                </span>
+                                <span class="popular__name">Vestido</span>
+                                <span class="popular__price">9,90&nbsp;&euro;</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#" class="popular__btn popular__btn--mobile btn btn--secondary">Ver todo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribe section -->
+        <section class="subscribe">
+            <div class="container">
+                <div class="subscribe__wrapper">
+                    <div class="subscribe__description">
+                        <svg class="subscribe__decor subscribe__decor--desktop" width="1272" height="1383"
+                            viewBox="0 0 1272 1383" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M150.601 300.379L707.257 150.933C719.96 147.523 730.094 161.695 722.759 172.612L302.908 797.577C294.875 809.535 307.656 824.489 320.719 818.417L1100.53 455.916C1112.33 450.428 1124.7 462.361 1119.64 474.354L799.643 1232.34"
+                                stroke="#F1F1F1" stroke-width="300" stroke-linecap="round" />
+                        </svg>
+                        <svg class="subscribe__decor subscribe__decor--tablet" width="1046" height="1137"
+                            viewBox="0 0 1046 1137" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M130.569 250.794L574.972 131.485C587.675 128.074 597.808 142.246 590.474 153.164L259.442 645.917C251.409 657.874 264.19 672.829 277.253 666.757L894.448 379.847C906.253 374.36 918.62 386.293 913.557 398.286L656.819 1006.44"
+                                stroke="#F1F1F1" stroke-width="260" stroke-linecap="round" />
+                        </svg>
+
+                        <svg class="subscribe__decor subscribe__decor--mobile" width="986" height="1077"
+                            viewBox="0 0 986 1077" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M100.594 220.845L545.037 101.493C557.74 98.0814 567.875 112.254 560.539 123.172L229.447 615.991C221.414 627.948 234.196 642.903 247.258 636.83L864.518 349.851C876.323 344.363 888.69 356.297 883.627 368.29L626.825 976.512"
+                                stroke="#F1F1F1" stroke-width="200" stroke-linecap="round" />
+                        </svg>
+                        <h2 class="subscribe__title">suscripci&oacute;n &laquo;un&nbsp;a&ntilde;o feliz sin
+                            preocupaciones&raquo;
+                        </h2>
+                        <ul class="subscribe__list">
+                            <li class="subscribe__item">
+                                <svg class="subscribe__icon" width="32" height="32" aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#icon-checks"></use>
+                                </svg>
+                                <p class="subscribe__list-text">Fundamentos del cuidado de&nbsp;la&nbsp;mascota: todo
+                                    lo&nbsp;necesario
+                                    desde el&nbsp;primer d&iacute;a, todos los elementos indispensables para recibir
+                                    a&nbsp;tu&nbsp;nuevo
+                                    amigo de&nbsp;manera feliz y&nbsp;sin preocupaciones.</p>
+                            </li>
+                            <li class="subscribe__item">
+                                <svg class="subscribe__icon" width="32" height="32" aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#icon-checks"></use>
+                                </svg>
+                                <p class="subscribe__list-text">Materiales educativos: comandos, comunicaci&oacute;n con
+                                    otros animales
+                                    y&nbsp;personas.</p>
+                            </li>
+                            <li class="subscribe__item">
+                                <svg class="subscribe__icon" width="32" height="32" aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#icon-checks"></use>
+                                </svg>
+                                <p class="subscribe__list-text">Seguro m&eacute;dico: revisiones regulares,
+                                    vacunaci&oacute;n
+                                    y&nbsp;tratamiento antiparasitario.</p>
+                            </li>
+                        </ul>
+                        <p class="subscribe__text">Seleccionaremos todo lo&nbsp;necesario para tu&nbsp;familia
+                            y&nbsp;la&nbsp;raza
+                            de&nbsp;tu&nbsp;nuevo compa&ntilde;ero.</p>
+                        <a href="#" class="subscribe__link btn">M&aacute;s informaci&oacute;n sobre
+                            la&nbsp;suscripci&oacute;n</a>
+                    </div>
+                    <div class="subscribe__picture">
+                        <picture>
+                            <source media="(max-width: 1767px)"
+                                srcset="images/subscribe-mobile.jpg 1x, images/subscribe-mobile@2x.jpg 2x">
+                            <source media="(max-width: 1023px)"
+                                srcset="images/subscribe-tablet.jpg 1x, images/subscribe-tablet@2x.jpg 2x">
+                            <img class="subscribe__img" src="images/subscribe.jpg" srcset="images/subscribe@2x.jpg 2x"
+                                width="872" height="552"
+                                alt="Una pareja abraza con cari&ntilde;o a&nbsp;un&nbsp;cachorro de&nbsp;golden retriever, ambos sonriendo suavemente. La&nbsp;escena transmite calidez y&nbsp;ternura, resaltando la&nbsp;alegr&iacute;a de&nbsp;la&nbsp;compa&ntilde;&iacute;a"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transformation section -->
+        <section class="transformation">
+            <div class="container">
+                <div class="transformation__wrapper">
+                    <h2 class="transformation__title">transformaci&oacute;n de&nbsp;tus mascotas</h2>
+                    <ul class="transformation__list">
+                        <li class="transformation__item">
+                            <picture>
+                                <source media="(max-width: 767px)"
+                                    srcset="images/transform-1-1-mobile.jpg 1x, images/transform-1-1-mobile@2x.jpg 2x">
+                                <source media="(max-width: 1023px)"
+                                    srcset="images/transform-1-1-tablet.jpg 1x, images/transform-1-1-tablet@2x.jpg 2x">
+                                <img class="transformation__img transformation__img--first"
+                                    src="images/transform-1-1.jpg" srcset="images/transform-1-1@2x.jpg 2x" width="428"
+                                    height="480"
+                                    alt="Un&nbsp;peque&ntilde;o pug negro yace sobre una manta blanca texturizada, mirando atentamente hacia adelante. La&nbsp;escena transmite calidez, comodidad y&nbsp;afecto"
+                                    loading="lazy">
+                            </picture>
+                            <picture>
+                                <source media="(max-width: 767px)"
+                                    srcset="images/transform-1-2-mobile.jpg 1x, images/transform-1-2-mobile@2x.jpg 2x">
+                                <source media="(max-width: 1023px)"
+                                    srcset="images/transform-1-2-tablet.jpg 1x, images/transform-1-2-tablet@2x.jpg 2x">
+                                <img class="transformation__img transformation__img--second"
+                                    src="images/transform-1-2.jpg" srcset="images/transform-1-2@2x.jpg 2x" width="428"
+                                    height="480"
+                                    alt="Un&nbsp;peque&ntilde;o pug con una boina roja y&nbsp;un&nbsp;su&eacute;ter a&nbsp;rayas mira hacia un&nbsp;lado con una expresi&oacute;n seria. El&nbsp;fondo es&nbsp;neutral, aportando un&nbsp;toque caprichoso"
+                                    loading="lazy">
+                            </picture>
+                        </li>
+                        <li class="transformation__item">
+                            <picture>
+                                <source media="(max-width: 767px)"
+                                    srcset="images/transform-2-1-mobile.jpg 1x, images/transform-2-1-mobile@2x.jpg 2x">
+                                <source media="(max-width: 1023px)"
+                                    srcset="images/transform-2-1-tablet.jpg 1x, images/transform-2-1-tablet@2x.jpg 2x">
+                                <img class="transformation__img transformation__img--first"
+                                    src="images/transform-2-1.jpg" srcset="images/transform-2-1@2x.jpg 2x" width="428"
+                                    height="480"
+                                    alt="Un&nbsp;gato atigrado naranja curioso con ojos verdes mira atentamente hacia arriba sobre un&nbsp;fondo gris desenfocado, transmitiendo curiosidad y&nbsp;calma"
+                                    loading="lazy">
+                            </picture>
+                            <picture>
+                                <source media="(max-width: 767px)"
+                                    srcset="images/transform-2-2-mobile.jpg 1x, images/transform-2-2-mobile@2x.jpg 2x">
+                                <source media="(max-width: 1023px)"
+                                    srcset="images/transform-2-2-tablet.jpg 1x, images/transform-2-2-tablet@2x.jpg 2x">
+                                <img class="transformation__img transformation__img--second"
+                                    src="images/transform-2-2.jpg" srcset="images/transform-2-2@2x.jpg 2x" width="428"
+                                    height="480"
+                                    alt="Primer plano de&nbsp;un&nbsp;gato pelirrojo alerta con ojos verdes llamativos mirando de&nbsp;lado. Lleva un&nbsp;collar negro con una campanita, disfrutando de&nbsp;una suave luz natural"
+                                    loading="lazy">
+                            </picture>
+                        </li>
+                        <li class="transformation__item transformation__item--mobile">
+                            <picture>
+                                <img class="transformation__img transformation__img--first"
+                                    src="images/transform-3-1.jpg" srcset="images/transform-3-1@2x.jpg 2x" width="428"
+                                    height="480"
+                                    alt="Un&nbsp;Dachshund marr&oacute;n con arn&eacute;s negro se&nbsp;mantiene sobre un&nbsp;terreno rocoso, mirando atentamente hacia abajo. La&nbsp;escena transmite curiosidad y&nbsp;un&nbsp;sentido de&nbsp;exploraci&oacute;n"
+                                    loading="lazy">
+                            </picture>
+                            <picture>
+                                <img class="transformation__img transformation__img--second"
+                                    src="images/transform-3-2.jpg" srcset="images/transform-3-2@2x.jpg 2x" width="428"
+                                    height="480"
+                                    alt="Un&nbsp;Dachshund marr&oacute;n con un&nbsp;abrigo oscuro se&nbsp;mantiene en&nbsp;la&nbsp;nieve, mirando hacia arriba con ojos curiosos. Los copos de&nbsp;nieve caen suavemente alrededor, creando una escena invernal serena"
+                                    loading="lazy">
+                            </picture>
+                        </li>
+                        <li class="transformation__item transformation__item--mobile">
+                            <picture>
+                                <img class="transformation__img transformation__img--first"
+                                    src="images/transform-4-1.jpg" srcset="images/transform-4-1@2x.jpg 2x" width="428"
+                                    height="480"
+                                    alt="Un&nbsp;galgo elegante con pelaje beige y&nbsp;blanco yace sobre una roca en&nbsp;un&nbsp;bosque iluminado por el&nbsp;sol. El&nbsp;fondo muestra &aacute;rboles altos y&nbsp;un&nbsp;follaje verde y&nbsp;suave"
+                                    loading="lazy">
+                            </picture>
+                            <picture>
+                                <img class="transformation__img transformation__img--second"
+                                    src="images/transform-4-2.jpg" srcset="images/transform-4-2@2x.jpg 2x" width="428"
+                                    height="480"
+                                    alt="Un&nbsp;galgo con un&nbsp;su&eacute;ter gris grueso se&nbsp;mantiene alerta en&nbsp;un&nbsp;campo nevado. El&nbsp;fondo muestra &aacute;rboles desenfocados bajo un&nbsp;cielo nublado, transmitiendo una escena invernal tranquila"
+                                    loading="lazy">
+                            </picture>
+                        </li>
+                    </ul>
+                    <a href="#" class="transformation__link btn btn--secondary">Mostrar m&aacute;s</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info-banner section -->
+        <section class="info-banner">
+            <div class="container">
+                <div class="info-banner__wrapper">
+                    <div class="info-banner__picture">
+                        <svg class="info-banner__decor" width="1018" height="533" viewBox="0 0 1018 533" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M64 210.402L367.77 413.394C384.313 424.448 404.035 404.701 392.96 388.172L195.282 93.1632C183.642 75.7923 205.735 55.7386 221.901 69.0012L639.7 411.767C655.72 424.91 677.723 405.294 666.497 387.876L501.943 132.548C490.456 114.725 513.604 95.015 529.368 109.197L922.482 462.866C938.078 476.897 961.101 457.712 950.113 439.841L727.208 77.3072"
+                                stroke="#F8F8F8" stroke-width="134" stroke-linecap="round" />
+                        </svg>
+                        <picture>
+                            <source media="(max-width: 767px)"
+                                srcset="images/info-banner-mobile.png 1x, images/info-banner-mobile@2x.png 2x">
+                            <source media="(max-width: 1023px)"
+                                srcset="images/info-banner-tablet.png 1x, images/info-banner-tablet@2x.png 2x">
+                            <img class="info-banner__img" src="images/info-banner.png"
+                                srcset="images/info-banner@2x.png 2x" width="1018" height="532"
+                                alt="Un&nbsp;perro marr&oacute;n con hocico gris se&nbsp;sienta en&nbsp;una silla con tapicer&iacute;a beige y&nbsp;botones. La&nbsp;imagen est&aacute; recortada de&nbsp;manera creativa en&nbsp;una forma abstracta angular sobre un&nbsp;fondo negro"
+                                loading="lazy">
+                        </picture>
+                        <img class="info-banner__img info-banner__img--second" src="images/info-banner-2.png"
+                            srcset="images/info-banner-2@2x.png 2x" width="1018" height="532"
+                            alt="Un&nbsp;gato atigrado acogedor y&nbsp;dormido se&nbsp;acurruca bajo una manta azul sobre una cama con estampado. La&nbsp;imagen est&aacute; recortada de&nbsp;manera creativa con formas redondeadas, transmitiendo calidez"
+                            loading="lazy">
+                    </div>
+                    <div class="info-banner__info">
+                        <h2 class="info-banner__title">M&aacute;s que una tienda</h2>
+                        <p class="info-banner__text">Te&nbsp;ayudamos a&nbsp;elegir todo lo&nbsp;necesario,
+                            lo&nbsp;m&aacute;s
+                            importante, lo&nbsp;m&aacute;s delicioso, lo&nbsp;m&aacute;s alegre, lo&nbsp;m&aacute;s
+                            c&oacute;modo
+                            y&nbsp;bonito. Lo&nbsp;hacemos con calidad para las mascotas y&nbsp;comodidad para sus
+                            due&ntilde;os.</p>
+                        <a class="info-banner__link btn" href="#">M&aacute;s informaci&oacute;n</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews section -->
+        <section class="reviews">
+            <div class="container">
+                <div class="reviews__wrapper">
+                    <div class="reviews__top">
+                        <h2 class="reviews__title">opiniones de&nbsp;nuestros clientes</h2>
+                        <a class="reviews__link btn btn--secondary" href="#">Ver todo</a>
+                    </div>
+                    <ul class="reviews__list">
+                        <li class="reviews__item">
+                            <div class="review-card">
+                                <div class="review-card__head">
+                                    <svg class="review-card__icon" width="64" height="64" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#icon-review-1"></use>
+                                    </svg>
+                                    <div class="review-card__inner">
+                                        <span class="review-card__name">Mar&iacute;a Petrova</span>
+                                        <span class="review-card__pet">C&eacute;sar, alabai</span>
+                                    </div>
+                                </div>
+                                <p class="review-card__text">Compr&eacute; aqu&iacute; un&nbsp;paquete con consejos
+                                    &uacute;tiles sobre
+                                    adiestramiento y&nbsp;alimentaci&oacute;n del perro, as&iacute; como
+                                    un&nbsp;conjunto
+                                    de&nbsp;accesorios para el&nbsp;cuidado del pelaje. La&nbsp;calidad de&nbsp;los
+                                    productos
+                                    es&nbsp;excelente, los materiales son seguros y&nbsp;duraderos. Los art&iacute;culos
+                                    est&aacute;n
+                                    escritos en&nbsp;un&nbsp;lenguaje accesible y&nbsp;contienen mucha
+                                    informaci&oacute;n &uacute;til. Los
+                                    empleados de&nbsp;la&nbsp;tienda siempre est&aacute;n dispuestos a&nbsp;ayudar con
+                                    la&nbsp;elecci&oacute;n y&nbsp;responder a&nbsp;cualquier pregunta.
+                                    &iexcl;Recomiendo esta tienda
+                                    a&nbsp;todos los due&ntilde;os de&nbsp;perros!</p>
+                            </div>
+                        </li>
+                        <li class="reviews__item">
+                            <div class="review-card">
+                                <div class="review-card__head">
+                                    <svg class="review-card__icon" width="64" height="64" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#icon-review-2"></use>
+                                    </svg>
+                                    <div class="review-card__inner">
+                                        <span class="review-card__name">Iv&aacute;n Ivan&oacute;v</span>
+                                        <span class="review-card__pet">Snezhinka, azul ruso</span>
+                                    </div>
+                                </div>
+                                <p class="review-card__text">Hac&iacute;a tiempo que buscaba una tienda online donde
+                                    pudiera comprar
+                                    todo lo&nbsp;necesario para el&nbsp;cuidado de&nbsp;mi&nbsp;gata. En&nbsp;Pawtastic
+                                    encontr&eacute;
+                                    todo lo&nbsp;que necesitaba: desde cuencos y&nbsp;juguetes hasta ropa
+                                    y&nbsp;productos
+                                    de&nbsp;higiene. Me&nbsp;gustaron especialmente los art&iacute;culos que explican
+                                    las particularidades
+                                    del comportamiento y&nbsp;la&nbsp;salud de&nbsp;los gatos de&nbsp;diferentes razas.
+                                    Los empleados
+                                    de&nbsp;la&nbsp;tienda siempre son amables y&nbsp;est&aacute;n listos para ayudar
+                                    con
+                                    la&nbsp;elecci&oacute;n. &iexcl;Gracias por el&nbsp;excelente servicio y&nbsp;los
+                                    productos
+                                    de&nbsp;calidad!</p>
+                            </div>
+                        </li>
+                        <li class="reviews__item">
+                            <div class="review-card">
+                                <div class="review-card__head">
+                                    <svg class="review-card__icon" width="64" height="64" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#icon-review-1"></use>
+                                    </svg>
+                                    <div class="review-card__inner">
+                                        <span class="review-card__name">Svetlana Sidorova</span>
+                                        <span class="review-card__pet">Archie, bulldog ingl&eacute;s</span>
+                                    </div>
+                                </div>
+                                <p class="review-card__text">La&nbsp;tienda online Pawtastic se&nbsp;convirti&oacute;
+                                    en&nbsp;mi&nbsp;salvaci&oacute;n cuando buscaba informaci&oacute;n sobre
+                                    el&nbsp;cuidado adecuado
+                                    de&nbsp;un&nbsp;cachorro. Aqu&iacute; encontr&eacute; numerosos art&iacute;culos,
+                                    videos
+                                    y&nbsp;consejos de&nbsp;criadores experimentados. Los productos disponibles
+                                    en&nbsp;la&nbsp;tienda son
+                                    de&nbsp;calidad y&nbsp;seguros para mi&nbsp;cachorro. Los empleados
+                                    de&nbsp;la&nbsp;tienda siempre
+                                    est&aacute;n disponibles y&nbsp;listos para responder cualquier pregunta.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a class="reviews__link reviews__link--mobile btn btn--secondary" href="#">Ver todo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help section -->
+        <section class="help">
+            <div class="container">
+                <div class="help__wrapper">
+                    <h2 class="help__title">Ayuda en&nbsp;la&nbsp;elecci&oacute;n</h2>
+                    <form class="help__form" action="#" method="POST">
+                        <div class="help__form-inner">
+                            <div class="help__custom-input custom-input custom-input--error">
+                                <input type="text" class="custom-input__field" name="name" placeholder="Nombre completo"
+                                    aria-label="Introduce tu&nbsp;nombre" required>
+                                <span class="custom-input__error">Campo obligatorio</span>
+                            </div>
+                            <div class="help__custom-input custom-input">
+                                <input type="tel" class="custom-input__field" name="name" placeholder="+7 000 000-00-00"
+                                    aria-label="Introduce tu&nbsp;n&uacute;mero de&nbsp;tel&eacute;fono" required>
+                                <span class="custom-input__error">Campo obligatorio</span>
+                            </div>
+                        </div>
+                        <button class="help__button btn" type="submit">Enviar</button>
+                        <svg class="help__decor" width="2125" height="936" viewBox="0 0 2125 936" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M151 480.014C213.988 435.363 679.954 277.026 947.788 152.306C967.226 143.255 987.267 167.473 974.329 184.572L544.229 752.996C532.022 769.128 548.742 791.111 567.548 783.656L1974 226.082"
+                                stroke="#D1DAFC" stroke-width="300" stroke-linecap="round" />
+                        </svg>
+                        <svg class="help__decor help__decor--mobile" width="1507" height="639" viewBox="0 0 1507 639"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M100 326.62C143.336 295.903 452.936 190.076 647.363 102.602C666.918 93.8047 687.196 118.472 674.257 135.57L393.946 505.996C381.738 522.128 398.458 544.112 417.264 536.657L1406 144.72"
+                                stroke="#D1DAFC" stroke-width="200" stroke-linecap="round" />
+                        </svg>
+                    </form>
+                    <p class="help__note">Al&nbsp;hacer clic en&nbsp;el&nbsp;bot&oacute;n &laquo;Enviar&raquo;, acepto
+                        los
+                        t&eacute;rminos&nbsp;de <a class="help__note-link" href="#">Pol&iacute;tica
+                            de&nbsp;privacidad</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__left">
+                    <a class="footer__logo" href="#" aria-label="Enlace a la página principal">
+                        <svg class="footer__icon-logo" width="193" height="41" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#icon-pawtastic"></use>
+                            <path class="footer__logo-icon-cat"
+                                d="M51.7862 13.6144C51.5234 14.25 50.5454 13.8241 50.8201 13.1996C52.8888 8.33513 52.8457 3.50546 52.7175 1.55034C52.7065 1.37817 52.5399 1.26096 52.3741 1.30491C48.1388 2.43495 44.7276 4.62268 42.0014 7.95143C41.2294 8.94319 42.2908 10.065 42.2908 10.065C42.2441 10.0503 40.4345 9.48898 40.3924 9.47524L40.3952 9.47066C40.1012 9.35894 39.8851 9.01004 40.1241 8.68037C43.2944 4.17854 47.6397 1.27653 53.038 0.0549137C53.3274 -0.0165147 53.6369 0.198687 53.6726 0.49539C53.7111 0.760958 54.5673 7.0714 51.7862 13.6144ZM51.1305 3.19869C48.3558 4.44319 46.8466 5.67579 45.7193 6.86535L48.0518 7.13184L44.832 8.33055L47.4153 8.78202L44.6891 9.79667L46.5573 10.1923L45.0041 10.8461C45.0838 10.8937 49.299 12.5824 49.299 12.5824C50.5664 9.80125 51.3613 5.50272 51.4492 3.41114C51.4565 3.24356 51.2825 3.13001 51.1296 3.19777L51.1305 3.19869ZM21.0325 0.0549137C20.7432 -0.0165147 20.4327 0.198687 20.397 0.49539C20.3595 0.760958 19.5041 7.0714 22.2853 13.6144C22.5481 14.25 23.5261 13.8241 23.2505 13.1996C21.1827 8.33605 21.2258 3.50546 21.353 1.55034C21.364 1.37817 21.5316 1.26096 21.6974 1.30491C25.9318 2.43495 29.343 4.62268 32.0692 7.95143C32.8421 8.94319 31.7807 10.065 31.7807 10.065C31.8274 10.0503 33.636 9.48898 33.6791 9.47524L33.6754 9.47066C33.9693 9.35894 34.1855 9.01004 33.9465 8.68037C30.7761 4.17854 26.4309 1.27653 21.0325 0.0549137ZM26.6562 8.78202L29.2386 8.33147L26.0188 7.13275L28.3521 6.86535C27.2239 5.67579 25.7148 4.44411 22.94 3.19869C22.788 3.13092 22.614 3.24539 22.6204 3.41206C22.7093 5.50363 23.5041 9.80125 24.7706 12.5833C24.7706 12.5833 28.9867 10.8947 29.0655 10.847L27.5133 10.1932L29.3805 9.79759L26.6552 8.78294L26.6562 8.78202Z"
+                                fill="currentColor" />
+                            <path class="footer__logo-icon-dog"
+                                d="M33.7954 8.8252C33.8241 9.00961 33.7235 9.1789 33.5647 9.25644L33.5573 9.26706L32.1173 10.0726C32.1173 10.0726 33.0373 9.25579 32.7542 7.73022C32.0322 4.22407 30.6842 1.901 29.0436 1.40477C27.518 1.76538 24.8312 5.39967 24.8312 9.92392C24.8312 11.2552 24.9662 12.5083 25.2343 13.6488C25.365 14.1707 24.5437 14.3688 24.4256 13.8388C24.1431 12.6364 24 11.3195 24 9.92392C24.0006 6.1559 26.3518 0.994154 28.9942 0.566668C31.4098 1.00791 33.0373 4.1097 33.7954 8.8252ZM29.0517 2.92036C27.5493 2.71473 25.3918 7.75961 25.8762 11.2882C25.9187 11.8951 26.6286 12.2008 27.1068 11.8257C27.8837 11.2171 28.7311 10.6945 29.6361 10.2745C31.1574 9.5677 31.8848 7.81398 31.3248 6.23027C30.6223 4.2447 29.6986 2.92036 29.0517 2.92036ZM43.0063 0.566668C40.5902 1.00791 38.9627 4.1097 38.2046 8.8252C38.1765 9.00961 38.2765 9.1789 38.4359 9.25644L38.4434 9.26706L39.8833 10.0726C39.8833 10.0726 38.9627 9.25579 39.2465 7.73022C39.9678 4.22407 41.3158 1.901 42.957 1.40477C44.482 1.76538 47.1694 5.39967 47.1694 9.92392C47.1694 11.2552 47.0338 12.5083 46.7663 13.6488C46.6357 14.1707 47.4563 14.3688 47.575 13.8388C47.8569 12.6364 48 11.3195 48 9.92392C48 6.15527 45.6488 0.994154 43.0063 0.566668ZM42.9483 2.92036C42.302 2.92036 41.3783 4.2447 40.6758 6.23027C40.1152 7.81398 40.8433 9.5677 42.3639 10.2745C43.2689 10.6945 44.117 11.2171 44.8932 11.8257C45.3714 12.2008 46.0819 11.8951 46.1244 11.2882C46.6088 7.75961 44.4507 2.71473 42.9483 2.92036Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <form class="subscription-form" action="#" method="POST">
+                        <p class="subscription-form__note">&iexcl;Suscr&iacute;bete a&nbsp;nuestras noticias
+                            y&nbsp;s&eacute;&nbsp;el&nbsp;primero en&nbsp;enterarte de&nbsp;las novedades!</p>
+                        <div class="subscription-form__wrapper">
+                            <div class="custom-input subscription-form__custom-input">
+                                <input type="email" name="email" class="custom-input__field"
+                                    aria-label="Introduce tu&nbsp;e-mail" placeholder="Tu&nbsp;e-mail" required>
+                            </div>
+                            <button class="subscription-form__button" type="submit" aria-label="Enviar formulario">
+                                <svg class="subscription-form__button-icon" width="20" height="20" aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="subscription-form__conf">Al&nbsp;suscribirte al&nbsp;bolet&iacute;n, aceptas los
+                            t&eacute;rminos de&nbsp;la <a href="#" class="subscription-form__conf-link">Pol&iacute;tica
+                                de&nbsp;privacidad</a></p>
+                    </form>
+                </div>
+                <div class="footer__right">
+                    <div class="footer__nav">
+                        <div class="footer__nav-inner">
+                            <h2 class="footer__nav-title">Para clientes</h2>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a class="footer__link" href="#">Cat&aacute;logo</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="#">Env&iacute;os</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="#">Devoluciones</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="#">Seguro m&eacute;dico</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="#">FAQ</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-inner">
+                            <h2 class="footer__nav-title">Sobre la&nbsp;empresa</h2>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a class="footer__link" href="#">Sobre nosotros</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="#">Gu&iacute;as</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="#">Contactos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="footer__social social">
+                        <li class="social__item">
+                            <a class="social__link" href="#" aria-label="Ir a Telegram">
+                                <svg class="social__link-icon" width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#icon-tg"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link" href="#" aria-label="Ir a VK">
+                                <svg class="social__link-icon" width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#icon-vk"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link" href="#" aria-label="Ir a YouTube">
+                                <svg class="social__link-icon" width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#icon-youtube"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <span class="footer__copyright">&copy;&nbsp;2024 Pawtastic</span>
+                <a class="footer__bottom-link" href="#">Pol&iacute;tica de&nbsp;privacidad</a>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
