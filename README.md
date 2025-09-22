@@ -50,10 +50,8 @@ This project was developed as part of a professional web development course, inc
   - BEM methodology  
   - Semantic HTML5 structure  
   - Validated via HTML and BEM validators  
-- **SVG Optimization & Sprite Usage**:  
-  - Main logo partially extracted into a sprite to reduce HTML size  
-  - Cat/Dog ear paths kept inline to enable hover animation (color change + ear switch)  
-  - Vector icons combined into a single sprite for performance and cleaner markup    
+- **SVG Logo & Animations**:  
+  - Full main logo kept inline to maintain hover animations (color change + cat/dog ear switch)   
 
 ---
 

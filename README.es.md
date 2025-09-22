@@ -50,10 +50,8 @@ Este proyecto se desarrolló como parte de un curso profesional de desarrollo we
   - Metodología BEM  
   - Estructura semántica HTML5  
   - Validado con HTML y BEM validators  
-- **Optimización de SVG y uso de sprite**:  
-  - El logotipo principal se extrajo parcialmente a un sprite para reducir el tamaño del HTML  
-  - Las rutas de las orejas de gato/perro se mantuvieron inline para permitir la animación hover (cambio de color + sustitución de orejas)  
-  - Los iconos vectoriales se combinaron en un único sprite para mejorar el rendimiento y mantener un marcado más limpio  
+- **Logotipo SVG y Animaciones**:  
+  - Logotipo principal completo mantenido en línea para conservar las animaciones al pasar el cursor (cambio de color + cambio de orejas de gato/perro)
 
 ---
 
