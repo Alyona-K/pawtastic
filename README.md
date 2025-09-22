@@ -62,7 +62,7 @@ Since this is a static project, no build or JavaScript setup is required. **Sass
 
 1. Clone the repository:
    ```bash
-   git clone <repository-link>
+   git clone https://github.com/Alyona-K/pawtastic
    ```
 
 2. Open the project folder in VS Code.
