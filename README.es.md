@@ -62,7 +62,7 @@ Dado que este es un proyecto estático, no se requiere configuración de build o
 
 1. Clona el repositorio:
    ```bash
-   git clone <repository-link>
+   git clone https://github.com/Alyona-K/pawtastic
    ```
 
 2. Abre la carpeta del proyecto en VS Code.
